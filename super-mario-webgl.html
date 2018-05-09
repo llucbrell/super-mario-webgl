@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html>
+<!--
+/*
+       dP                dP       dP                                                          dP
+       88                88       88                                                          88
+       88d888b. .d8888b. 88d888b. 88d888b. .d8888b. .d8888b. .d8888b. .d8888b. .d8888b. .d888b88 .d8888b.
+       88'  `88 88'  `88 88'  `88 88'  `88 88ooood8 Y8ooooo. 88'  `"" 88'  `"" 88'  `88 88'  `88 88ooood8
+       88    88 88.  .88 88.  .88 88.  .88 88.  ...       88 88.  ... 88.  ... 88.  .88 88.  .88 88.  ...
+       dP    dP `88888P' 88Y8888' 88Y8888' `88888P' `88888P' `88888P' `88888P' `88888P' `88888P8 `88888P'
+
+                                                                              copyright 2016 hobbescode
+                                                                              author Lucas_c/llucbrell
+                                                                              hobbescode@gmail.com
+
+                                   i8@@8Li.                t@8000
+                                 .GitL:::GGGC;             G8ifGt80LtL11,.
+                                  C,Li;i8i;Ci:ti  i11i:;i::i00ii;;ifffi;;f@8
+                                  ,L;0L88iCf;L01f.   ,;  ifG0101f0t:;:;;;1GC
+                                    t@80CL0LfC,    ,1i :;ii CGti1;G8fi::fCiL:
+                                      L0C11tGf;      ,1;   L .;:.         Lii
+                                      ,i0fLGt;f1.    t:                    1.
+                                    ;0C8Li;t88L;:,,i  :t,          :1 .,  .t
+                                  18i;i;1fC8tL,      .             ,  1. :L
+                                1C:;G8Gf;f;             ::::      ;LG0t. iLG0CCi
+            ..t0fC0tGt,       iC:ifCGCt:             ;,    ;L  i G1G0C11CLCL1C88CGti
+          ,Li;G01f01C::GC.   C8G1;:;:;              t           ii8@@@@@C  ;G81iGfitCtt1tf:
+        .CiGtL,      :0:;8: Gi:i08@8.           ..                .ifft,       iL:.       .1
+       .0CLfi          Ct;;08Cffti1.          .,                                f.  i   it:
+       t1i:L            0GLf:::;;;i          ;.                                 i  :.  ;   ::
+       0@@@;            ,iGt:::;:1          f                                    ;; ,i  i1ti
+       C@@@.             18888@@8C         .f     :t11:                               t. i
+       .8@0               G;:::;C8f      :;.L   ,i   , f
+                          ff:C8L;;;: t81,:8::f..f    @1 1
+                          G0i:::i8L10@8,,ff,f0L0. t@,.f.1
+                           C1:18L:i8;88,:Lf8t:f:   : Lt:.
+                           ,80C:::8t:L8f:G@G,:L   ,@8  i   ;i.
+                            ,8:::t8i::C8C1@8CfG   f@G i ;;    ;1
+                              tC:t8f::,;C8C1L0f     .G1f..1 G@,1
+                                i0t01::::::f01,f1,iG0;1  Gf    1
+                                   :tC00Lt:.      ;G,       8L1.
+                          .LG:;                    f.  f@@1  t.
+                      ,;.0ttC::::                   L   :t: ,:
+                 i;ftttttttt8:::;                    .L.  :1.
+             .:Gtttttfttttttttf;::;
+         i8tttttft::Cttttttttt;::::
+         tttC,.;;:::::fttttttttt::::;
+       ,::1Lt8;:::::::tttttttttt;:::f
+     8:0tttttttG;::::::;tttttttttt:::;
+   CtfttttttttttG::::::::tttttttttt:::i
+   ttttttttttttttt:::::::;tttttttttC:::
+    Gtttttttttttttt:::::::Gtttttttttf::t
+    .ttttttttttttttt:L.Cii;tttttttttL;f1
+     Lttttttttttttttfift,8ttttttttff
+      Gttttttttttttt0fttttttttt,
+       tttttttt1GGttCtLtG8G
+        .1ft.i,.  t18i           GGGf;;;:::::;::i;:;C
+                t          .ifi:::;:;1fft11if;L11LLf1itC8fi
+                   ;  C8LttttCCLttttttttG1ft        1f
+                   :         t                     G
+                  ;         ;
+                 L        t
+               C       t
+                 8    C
+                 ;Ct
+
+*/
+-->
+<head>
+    <title>Super Mario WebGL</title>
+
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+     #WebGL-output{
+       max-height: 30px;
+     }
+        body {
+            /* set margin to 0 and overflow to hidden, to
+             use the complete page */
+            margin: 0;
+            overflow: hidden;
+        }
+        @font-face
+        {
+           font-family: "Nintender";
+           src: url("fonts/Nintender.ttf") format("truetype");
+        }
+        @font-face
+        {
+           font-family: "SuperPlumber";
+           src: url("fonts/SuperPlumber.ttf") format("truetype");
+        }
+        @media screen and (min-width: 380px) {
+          .tittle{
+            font-size: 1em;
+            }
+        }
+
+        @media screen and (min-width: 480px) {
+          .tittle{
+            font-size: 1.8em;
+            }
+        }
+
+        @media screen and (min-width: 780px) {
+          .tittle{
+            font-size: 2.8em;
+            }
+        }
+      .tittle{
+        padding: 2%;
+        color:#6F0E20;
+
+      }
+      .text-tittle{
+        font-family: Nintender;
+      }
+      .functions{
+        padding: 5%;
+        color:#4641FF;
+        font-family: SuperPlumber;
+        font-size: 28px;
+      }
+      .server-func{
+	display:none;
+      }
+      input{
+        max-width: 50px;
+      }
+      canvas{
+        z-index: -1;
+      /*  position: absolute;*/
+      }
+      .jscolor > divz{
+        /*  position: absolute;*/
+      }
+      h5{
+	padding: 2%;
+	top-padding: 1%;
+	width: 40%;
+        color:#32851D;
+      }
+    </style>
+</head>
+<body>
+
+
+
+<!-- WEBGL-BOX -->
+<div id="WebGL-output">
+</div>
+<!-- END WEBGL-BOX -->
+
+<!-- COLOR-BOX -->
+<div>
+
+<div class="tittle text-tittle">
+  <h2>Super Mario WebGL</h2>
+  <h5>Press the keyboard arrows and A-Z to navigate and check that it's the real Mario.</h5>
+</div>
+
+<!-- SELECT -->
+<label for="Parts" class="functions server-func">Change COLORS</label>
+<select id="Parts" class="server-func" name="Parts">
+
+ <option value="" selected>Please choose</option>
+ <option value="Block">Block</option>
+ <option value="Buttons">Buttons</option>
+ <option value="Cap">Cap</option>
+ <option value="Eyes">Eyes</option>
+ <option value="Hair">Hair</option>
+ <option value="Moustache">Moustache</option>
+ <option value="Overalls">Overalls</option>
+ <option value="Shirt">Shirt</option>
+ <option value="Shoes">Shoes</option>
+ <option value="Skin">Skin</option>
+
+</select>
+<!-- END SELECT -->
+
+<!-- COLOR PICKER -->
+<input class="jscolor server-func" data-jscolor="{padding:20, borderWidth:3, zIndex:2}" value="ab1632">
+</div>
+<!-- END COLOR-BOX -->
+
+
+<!-- LOAD THREEJS CODE -->
+<script type="text/javascript">
+
+var shoe_color= 0x565100;
+var skin_color=0xFDD59C;
+var shirt_color=0x565100;
+var overalls_color=0xAB1632;
+var cap_color=0xAB1632;
+var hair_color=0x565100;
+var eyes_color=0x565100;
+var buttons_color=0xE5CD24;
+var moustache_color=0x565100;
+var block_color=0xF6F930;
+
+    // run my Three.js stuff.
+    function init() {
+
+              // create a scene, that will hold all our elements such as objects, cameras and lights.
+              var scene = new THREE.Scene();
+
+              // create a camera, which defines where we're looking at.
+              var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+              // create a render and set the size
+              var renderer = new THREE.WebGLRenderer();
+
+              renderer.setClearColor(new THREE.Color(0xEEEEEE, 1.0));
+              renderer.setSize(window.innerWidth, window.innerHeight);
+              renderer.shadowMapEnabled = true;
+
+              // call functions for drawing figures
+              drawStopMario(scene);
+              drawQuestionBlock(scene);
+
+              // position and point the camera to the center of the scene
+              camera.position.x = -50;
+              camera.position.y = 30;
+              camera.position.z = -90;
+              camera.lookAt(scene.position);
+
+              // add spotlight for the shadows
+              var spotLight = new THREE.SpotLight(0xffffff);
+              spotLight.position.set(-90, 60, -90);
+              spotLight.castShadow = true;
+              scene.add(spotLight);
+
+              // add the output of the renderer to the html element
+              document.getElementById("WebGL-output").appendChild(renderer.domElement);
+
+              // call the render function
+              renderer.render(scene, camera);
+
+
+              // attach listeners
+              window.onkeydown = function(e) {
+                 var key = e.keyCode ? e.keyCode : e.which;
+
+                 if (key == 38) {
+                     camera.position.y= camera.position.y + 2;
+                       renderer.render(scene, camera);
+                       camera.lookAt(scene.position);
+                 }
+                 if (key == 37) {
+                     camera.position.x= camera.position.x + 2;
+                       renderer.render(scene, camera);
+                       camera.lookAt(scene.position);
+                 }
+                 if (key == 39) {
+                     camera.position.x= camera.position.x - 2;
+                       renderer.render(scene, camera);
+                       camera.lookAt(scene.position);
+                 }
+                 else if (key == 65) {
+                     camera.position.z= camera.position.z + 2;
+                       renderer.render(scene, camera);
+                       camera.lookAt(scene.position);
+                       console.log('key');
+
+                 }
+                 else if (key == 90) {
+                     camera.position.z= camera.position.z -2 ;
+                       renderer.render(scene, camera);
+                       camera.lookAt(scene.position);
+                       console.log('key');
+                 }
+                 else if (key == 40) {
+                     camera.position.y=camera.position.y - 2;
+                       renderer.render(scene, camera);
+                       camera.lookAt(scene.position);
+                 }
+
+              }
+
+
+              // render the changed color
+              function renderNewColor(part_value, new_color){
+                if(part_value=="Buttons"){
+                //  set string to hex and apply to global var
+                buttons_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Cap"){
+                //  set string to hex and apply to global var
+                cap_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Eyes"){
+                //  set string to hex and apply to global var
+                eyes_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Hair"){
+                //  set string to hex and apply to global var
+                hair_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Moustache"){
+                //  set string to hex and apply to global var
+                moustache_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Overalls"){
+                //  set string to hex and apply to global var
+                overalls_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Shirt"){
+                //  set string to hex and apply to global var
+                shirt_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Shoes"){
+                //  set string to hex and apply to global var
+                shoe_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Skin"){
+                //  set string to hex and apply to global var
+                skin_color = parseInt(new_color, 16);
+                }
+                if(part_value=="Block"){
+                //  set string to hex and apply to global var
+                block_color = parseInt(new_color, 16);
+                }
+                // delete everything
+                removeAll();
+                // renders color
+                drawStopMario(scene);
+                drawQuestionBlock(scene);
+                renderer.render(scene, camera);
+              }
+
+              // runs to change the color when it's changed
+              function changeColor(part_value){
+                var picker = document.getElementById("pickeret");
+                picker.onchange=function(){
+                  console.log('part=='+ picker.value);
+                  renderNewColor(part_value, picker.value);
+                };
+
+              }
+              // runs changeColor when select a new part of the body
+              var part_picker = document.getElementById("Parts");
+                part_picker.onchange=function(){
+                  var part_value = document.getElementById("Parts").value;
+                  changeColor(part_value);
+              }
+
+              function removeAll(){
+                var allChildren = scene.children;
+                allChildren.forEach(function(e){
+                    if (e instanceof THREE.Mesh) {
+                      scene.remove(e);
+                    }
+                });
+              }
+
+
+    }
+    window.onload = init
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="libs/three.js"></script>
+<script type="text/javascript" src="my_libs/tictactoe.js"></script>
+<script type="text/javascript" src="my_libs/3D_block_drawings.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+
+</body>
+</html>
