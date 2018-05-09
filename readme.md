@@ -5,6 +5,8 @@ Until I set up the Github page for this project you can take a look at the scree
 
 Or if you prefer,you can download the source code and then open super-mario-webgl.html file in your favorite browser.
 
+## Screenshots
+
 ![](https://raw.githubusercontent.com/llucbrell/super-mario-webgl/master/captura1.png)
 ![](https://raw.githubusercontent.com/llucbrell/super-mario-webgl/master/captura3.png)
 ![](https://raw.githubusercontent.com/llucbrell/super-mario-webgl/master/captura2.png)
